@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const logger = require('./utils/logger');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -81,7 +82,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Backend server running on http://localhost:${PORT}`);
+  logger.info(`Server running on port ${PORT}`);
 });
 
 module.exports = app;
