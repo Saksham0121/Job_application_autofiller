@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Autofiller</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">⚡</div>
+      <div class="header-text">
+        <h1>Job Autofiller</h1>
+        <p>AI Job Application Assistant</p>
+      </div>
+    </header>
+
+    <!-- Auth States -->
+    <div id="loading-state" class="state">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+
+    <div id="logged-out-state" class="state hidden">
+      <div class="icon-lg">🔒</div>
+      <h2>Sign In Required</h2>
+      <p>Sign in to your dashboard to enable autofill on this page.</p>
+      <button class="btn btn-primary" id="open-dashboard-btn">Open Dashboard →</button>
+    </div>
+
+    <div id="logged-in-state" class="state hidden">
+      <!-- User info -->
+      <div class="user-card">
+        <div class="user-avatar" id="user-avatar">U</div>
+        <div class="user-info">
+          <span class="user-name" id="user-name">User</span>
+          <span class="user-email" id="user-email">user@email.com</span>
+        </div>
+        <button class="logout-btn" id="logout-btn" title="Sign out">⇥</button>
+      </div>
+
+      <!-- Portal detection -->
+      <div class="portal-card" id="portal-card">
+        <div class="portal-dot" id="portal-dot"></div>
+        <span id="portal-label">Scanning page...</span>
+      </div>
+
+      <!-- Main action -->
+      <button class="btn btn-primary btn-lg" id="autofill-btn">
+        <span class="btn-icon">⚡</span>
+        <span>Start Autofill</span>
+      </button>
+
+      <!-- Quick stats -->
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-fields">—</div>
+          <div class="stat-label">Fields</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-apps">—</div>
+          <div class="stat-label">Applied</div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="links">
+        <button class="link-btn" id="dashboard-link">📊 Dashboard</button>
+        <button class="link-btn" id="profile-link">👤 Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
